@@ -136,3 +136,4 @@ D:\iti-9-month\C#\Labs\EF\EducationSysProject\EducationSysProject\obj\Debug\net9
 D:\iti-9-month\C#\Labs\EF\EducationSysProject\EducationSysProject\obj\Debug\net9.0-windows\EducationSysProject.genruntimeconfig.cache
 D:\iti-9-month\C#\Labs\EF\EducationSysProject\EducationSysProject\obj\Debug\net9.0-windows\ref\EducationSysProject.dll
 D:\iti-9-month\C#\Labs\EF\EducationSysProject\EducationSysProject\obj\Debug\net9.0-windows\EducationSysProject.MainForm.resources
+D:\iti-9-month\C#\Labs\EF\EducationSysProject\EducationSysProject\obj\Debug\net9.0-windows\EducationSysProject.sourcelink.json

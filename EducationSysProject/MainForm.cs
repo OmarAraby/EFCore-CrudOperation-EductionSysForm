@@ -44,69 +44,7 @@ namespace EducationSysProject
             InitializeForm();
         }
 
-        //private void InitializeTabs()
-        //{
-        //    // Add the "Home" tab first
-        //    var homeTab = new TabPage("Home");
-        //    homeTab.BackColor = Color.FromArgb(220, 220, 220); // Match the form background
-
-        //    // Create a panel to hold the welcome content
-        //    var homePanel = new Panel
-        //    {
-        //        Dock = DockStyle.Fill,
-        //        BackColor = Color.FromArgb(220, 220, 220)
-        //    };
-
-        //    // Add a welcome label
-        //    var welcomeLabel = new Label
-        //    {
-        //        Text = "Welcome to the EducationSys Project",
-        //        Font = new Font("Segoe UI", 16F, FontStyle.Bold),
-        //        ForeColor = Color.FromArgb(40, 167, 69), // Green to match the theme
-        //        AutoSize = true,
-        //        Location = new Point(250, 130)
-        //    };
-        //    homePanel.Controls.Add(welcomeLabel);
-
-        //    // Add a description label
-        //    var descriptionLabel = new Label
-        //    {
-        //        Text = "This Project helps you manage students, departments, courses, and more.\n" +
-        //               "Use the tabs above to navigate through different sections.",
-        //        Font = new Font("Segoe UI", 10F, FontStyle.Regular),
-        //        ForeColor = Color.FromArgb(33, 37, 41),
-        //        AutoSize = true,
-        //        Location = new Point(250, 180)
-        //    };
-        //    homePanel.Controls.Add(descriptionLabel);
-
-
-
-        //    homeTab.Controls.Add(homePanel);
-        //    tabControl.TabPages.Add(homeTab);
-        //    foreach (var entity in _entityTypes)
-        //    {
-        //        var tabPage = new TabPage(entity.Key);
-        //        tabPage.Tag = entity.Value;
-
-        //        var dataGridView = new DataGridView
-        //        {
-        //            Dock = DockStyle.Fill,
-        //            AllowUserToAddRows = false,
-        //            AllowUserToDeleteRows = false,
-        //            ReadOnly = true,
-        //            MultiSelect = false,
-        //            SelectionMode = DataGridViewSelectionMode.FullRowSelect,
-        //            AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-        //        };
-
-        //        dataGridView.CellDoubleClick += DataGridView_CellDoubleClick;
-        //        tabPage.Controls.Add(dataGridView);
-
-        //        tabControl.TabPages.Add(tabPage);
-        //    }
-        //}
-
+     
         private void InitializeTabs()
         {
             // Add the "Home" tab first
@@ -186,6 +124,7 @@ namespace EducationSysProject
                 tabControl.TabPages.Add(tabPage);
             }
         }
+
         //private void InitializeForm()
         //{
         //    btnSave.Click += BtnSave_Click;
@@ -194,6 +133,17 @@ namespace EducationSysProject
 
         //    tabControl.SelectedIndexChanged += async (s, e) =>
         //    {
+        //        // Skip if the "Home" tab is selected
+        //        if (tabControl.SelectedTab.Text == "Home")
+        //        {
+        //            formPanel.Controls.Clear(); // Clear the form panel
+        //            formPanel.Visible = false; // Hide the form panel
+        //            btnSave.Visible = false; // Hide the Save button
+        //            btnDelete.Visible = false; // Hide the Delete button
+        //            btnCancel.Visible = false; // Hide the Cancel button
+        //            return;
+        //        }
+
         //        if (tabControl.SelectedTab != null && tabControl.SelectedTab.Tag is Type entityType)
         //        {
         //            _currentEntityType = entityType;
@@ -201,12 +151,22 @@ namespace EducationSysProject
         //            _formService.SetFormPanel(formPanel);
         //            await LoadEntities();
         //            ResetFormState();
+        //            formPanel.Visible = true; 
+        //            btnSave.Visible = true;
+        //            btnDelete.Visible = true; 
+        //            btnCancel.Visible = true; 
+        //            btnSave.Enabled = true; 
         //        }
         //    };
 
         //    if (tabControl.TabPages.Count > 0)
         //    {
-        //        tabControl.SelectedIndex = 0;
+        //        tabControl.SelectedIndex = 0; // Set "Home" tab as default
+        //                                      // Since "Home" tab is selected by default, hide the elements initially
+        //        formPanel.Visible = false;
+        //        btnSave.Visible = false;
+        //        btnDelete.Visible = false;
+        //        btnCancel.Visible = false;
         //    }
         //}
 
@@ -218,14 +178,27 @@ namespace EducationSysProject
 
             tabControl.SelectedIndexChanged += async (s, e) =>
             {
-                // Skip if the "Home" tab is selected
                 if (tabControl.SelectedTab.Text == "Home")
                 {
-                    formPanel.Controls.Clear(); // Clear the form panel
-                    formPanel.Visible = false; // Hide the form panel
-                    btnSave.Visible = false; // Hide the Save button
-                    btnDelete.Visible = false; // Hide the Delete button
-                    btnCancel.Visible = false; // Hide the Cancel button
+                    if (formPanel.InvokeRequired)
+                    {
+                        formPanel.Invoke(new Action(() =>
+                        {
+                            formPanel.Controls.Clear();
+                            formPanel.Visible = false;
+                            btnSave.Visible = false;
+                            btnDelete.Visible = false;
+                            btnCancel.Visible = false;
+                        }));
+                    }
+                    else
+                    {
+                        formPanel.Controls.Clear();
+                        formPanel.Visible = false;
+                        btnSave.Visible = false;
+                        btnDelete.Visible = false;
+                        btnCancel.Visible = false;
+                    }
                     return;
                 }
 
@@ -236,22 +209,49 @@ namespace EducationSysProject
                     _formService.SetFormPanel(formPanel);
                     await LoadEntities();
                     ResetFormState();
-                    formPanel.Visible = true; 
-                    btnSave.Visible = true;
-                    btnDelete.Visible = true; 
-                    btnCancel.Visible = true; 
-                    btnSave.Enabled = true; 
+                    if (formPanel.InvokeRequired)
+                    {
+                        formPanel.Invoke(new Action(() =>
+                        {
+                            formPanel.Visible = true;
+                            btnSave.Visible = true;
+                            btnDelete.Visible = true;
+                            btnCancel.Visible = true;
+                            btnSave.Enabled = true;
+                        }));
+                    }
+                    else
+                    {
+                        formPanel.Visible = true;
+                        btnSave.Visible = true;
+                        btnDelete.Visible = true;
+                        btnCancel.Visible = true;
+                        btnSave.Enabled = true;
+                    }
                 }
             };
 
             if (tabControl.TabPages.Count > 0)
             {
-                tabControl.SelectedIndex = 0; // Set "Home" tab as default
-                                              // Since "Home" tab is selected by default, hide the elements initially
-                formPanel.Visible = false;
-                btnSave.Visible = false;
-                btnDelete.Visible = false;
-                btnCancel.Visible = false;
+                if (tabControl.InvokeRequired)
+                {
+                    tabControl.Invoke(new Action(() =>
+                    {
+                        tabControl.SelectedIndex = 0;
+                        formPanel.Visible = false;
+                        btnSave.Visible = false;
+                        btnDelete.Visible = false;
+                        btnCancel.Visible = false;
+                    }));
+                }
+                else
+                {
+                    tabControl.SelectedIndex = 0;
+                    formPanel.Visible = false;
+                    btnSave.Visible = false;
+                    btnDelete.Visible = false;
+                    btnCancel.Visible = false;
+                }
             }
         }
         private async void DataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -312,64 +312,160 @@ namespace EducationSysProject
         //}
 
 
+        //private async Task LoadEntities()
+        //{
+        //    if (_currentEntityType == null) return;
+
+        //    try
+        //    {
+        //        // Use reflection to dynamically invoke GetAllAsync with the current entity type
+        //        var getAllMethod = typeof(IGenericCrudService).GetMethod("GetAllAsync");
+        //        var genericGetAllMethod = getAllMethod.MakeGenericMethod(_currentEntityType);
+
+        //        // Invoke the generic method, which returns Task<IEnumerable<T>>
+        //        var task = (Task)genericGetAllMethod.Invoke(_crudService, null);
+
+        //        // Await the task dynamically to get IEnumerable<T>
+        //        await task.ConfigureAwait(false);
+
+        //        // Use reflection to get the result (IEnumerable<T>) from the Task
+        //        var resultProperty = task.GetType().GetProperty("Result");
+        //        var entities = (IEnumerable)resultProperty.GetValue(task);
+
+        //        // Log the number of entities retrieved
+        //        var entityCount = entities?.Cast<object>().Count() ?? 0;
+        //        System.Diagnostics.Debug.WriteLine($"Loaded {entityCount} entities of type {_currentEntityType.Name}");
+
+        //        // Cast the entities to IEnumerable<object>
+        //        var objectEntities = entities?.Cast<object>().ToList();
+
+        //        // Check if the data is null or empty
+        //        if (objectEntities == null || !objectEntities.Any())
+        //        {
+        //            _currentGrid.DataSource = null; // Clear the DataGridView if no data
+        //            MessageBox.Show($"No {_currentEntityType.Name} data found.");
+        //            return;
+        //        }
+
+        //        var bindingSource = new BindingSource();
+        //        bindingSource.DataSource = objectEntities;
+        //        _currentGrid.DataSource = bindingSource;
+
+        //        // Hide navigation properties
+        //        foreach (DataGridViewColumn column in _currentGrid.Columns)
+        //        {
+        //            PropertyInfo prop = _currentEntityType.GetProperty(column.Name);
+        //            if (prop != null &&
+        //                ((prop.PropertyType.IsClass && prop.PropertyType != typeof(string)) ||
+        //                 prop.PropertyType.IsInterface))
+        //            {
+        //                column.Visible = false;
+        //            }
+        //            else if (prop == null)
+        //            {
+        //                column.Visible = false;
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show($"Error loading data: {ex.Message}\nInner Exception: {(ex.InnerException != null ? ex.InnerException.Message : "None")}");
+        //    }
+        //}
+
         private async Task LoadEntities()
         {
             if (_currentEntityType == null) return;
 
             try
             {
-                // Use reflection to dynamically invoke GetAllAsync with the current entity type
                 var getAllMethod = typeof(IGenericCrudService).GetMethod("GetAllAsync");
                 var genericGetAllMethod = getAllMethod.MakeGenericMethod(_currentEntityType);
-
-                // Invoke the generic method, which returns Task<IEnumerable<T>>
                 var task = (Task)genericGetAllMethod.Invoke(_crudService, null);
-
-                // Await the task dynamically to get IEnumerable<T>
                 await task.ConfigureAwait(false);
-
-                // Use reflection to get the result (IEnumerable<T>) from the Task
                 var resultProperty = task.GetType().GetProperty("Result");
                 var entities = (IEnumerable)resultProperty.GetValue(task);
 
-                // Log the number of entities retrieved
                 var entityCount = entities?.Cast<object>().Count() ?? 0;
                 System.Diagnostics.Debug.WriteLine($"Loaded {entityCount} entities of type {_currentEntityType.Name}");
 
-                // Cast the entities to IEnumerable<object>
                 var objectEntities = entities?.Cast<object>().ToList();
-
-                // Check if the data is null or empty
                 if (objectEntities == null || !objectEntities.Any())
                 {
-                    _currentGrid.DataSource = null; // Clear the DataGridView if no data
-                    MessageBox.Show($"No {_currentEntityType.Name} data found.");
+                    if (_currentGrid.InvokeRequired)
+                    {
+                        _currentGrid.Invoke(new Action(() =>
+                        {
+                            _currentGrid.DataSource = null;
+                            MessageBox.Show($"No {_currentEntityType.Name} data found.");
+                        }));
+                    }
+                    else
+                    {
+                        _currentGrid.DataSource = null;
+                        MessageBox.Show($"No {_currentEntityType.Name} data found.");
+                    }
                     return;
                 }
 
                 var bindingSource = new BindingSource();
                 bindingSource.DataSource = objectEntities;
-                _currentGrid.DataSource = bindingSource;
 
-                // Hide navigation properties
-                foreach (DataGridViewColumn column in _currentGrid.Columns)
+                if (_currentGrid.InvokeRequired)
                 {
-                    PropertyInfo prop = _currentEntityType.GetProperty(column.Name);
-                    if (prop != null &&
-                        ((prop.PropertyType.IsClass && prop.PropertyType != typeof(string)) ||
-                         prop.PropertyType.IsInterface))
+                    _currentGrid.Invoke(new Action(() =>
                     {
-                        column.Visible = false;
-                    }
-                    else if (prop == null)
+                        _currentGrid.DataSource = bindingSource;
+
+                        foreach (DataGridViewColumn column in _currentGrid.Columns)
+                        {
+                            PropertyInfo prop = _currentEntityType.GetProperty(column.Name);
+                            if (prop != null &&
+                                ((prop.PropertyType.IsClass && prop.PropertyType != typeof(string)) ||
+                                 prop.PropertyType.IsInterface))
+                            {
+                                column.Visible = false;
+                            }
+                            else if (prop == null)
+                            {
+                                column.Visible = false;
+                            }
+                        }
+                    }));
+                }
+                else
+                {
+                    _currentGrid.DataSource = bindingSource;
+
+                    foreach (DataGridViewColumn column in _currentGrid.Columns)
                     {
-                        column.Visible = false;
+                        PropertyInfo prop = _currentEntityType.GetProperty(column.Name);
+                        if (prop != null &&
+                            ((prop.PropertyType.IsClass && prop.PropertyType != typeof(string)) ||
+                             prop.PropertyType.IsInterface))
+                        {
+                            column.Visible = false;
+                        }
+                        else if (prop == null)
+                        {
+                            column.Visible = false;
+                        }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error loading data: {ex.Message}\nInner Exception: {(ex.InnerException != null ? ex.InnerException.Message : "None")}");
+                if (InvokeRequired)
+                {
+                    Invoke(new Action(() =>
+                    {
+                        MessageBox.Show($"Error loading data: {ex.Message}\nInner Exception: {(ex.InnerException != null ? ex.InnerException.Message : "None")}");
+                    }));
+                }
+                else
+                {
+                    MessageBox.Show($"Error loading data: {ex.Message}\nInner Exception: {(ex.InnerException != null ? ex.InnerException.Message : "None")}");
+                }
             }
         }
         private async void BtnSave_Click(object sender, EventArgs e)

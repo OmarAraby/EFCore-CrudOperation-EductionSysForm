@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|d:\\iti-9-month\\c#\\labs\\ef\\educationsysproject\\educationsysproject\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|solutionrelative:educationsysproject\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|d:\\iti-9-month\\c#\\labs\\ef\\educationsysproject\\educationsysproject\\services\\dynamicformservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|solutionrelative:educationsysproject\\services\\dynamicformservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|d:\\iti-9-month\\c#\\labs\\ef\\educationsysproject\\educationsysproject\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|solutionrelative:educationsysproject\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|d:\\iti-9-month\\c#\\labs\\ef\\educationsysproject\\educationsysproject\\services\\genericcrudservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|solutionrelative:educationsysproject\\services\\genericcrudservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|d:\\iti-9-month\\c#\\labs\\ef\\educationsysproject\\educationsysproject\\services\\serviceprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|solutionrelative:educationsysproject\\services\\serviceprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|d:\\iti-9-month\\c#\\labs\\ef\\educationsysproject\\educationsysproject\\context\\educationsyscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|solutionrelative:educationsysproject\\context\\educationsyscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,52 +31,8 @@
       "RelativeMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|solutionrelative:educationsysproject\\data\\repositories\\coursestudentrepository\\coursestudentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|d:\\iti-9-month\\c#\\labs\\ef\\educationsysproject\\educationsysproject\\services\\dynamicformservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|solutionrelative:educationsysproject\\services\\dynamicformservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|d:\\iti-9-month\\c#\\labs\\ef\\educationsysproject\\educationsysproject\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|solutionrelative:educationsysproject\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|d:\\iti-9-month\\c#\\labs\\ef\\educationsysproject\\educationsysproject\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|solutionrelative:educationsysproject\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|d:\\iti-9-month\\c#\\labs\\ef\\educationsysproject\\educationsysproject\\data\\repositories\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|solutionrelative:educationsysproject\\data\\repositories\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|d:\\iti-9-month\\c#\\labs\\ef\\educationsysproject\\educationsysproject\\data\\repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|solutionrelative:educationsysproject\\data\\repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|d:\\iti-9-month\\c#\\labs\\ef\\educationsysproject\\educationsysproject\\data\\uintofwork\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|solutionrelative:educationsysproject\\data\\uintofwork\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|d:\\iti-9-month\\c#\\labs\\ef\\educationsysproject\\educationsysproject\\data\\uintofwork\\iunitofwork .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|solutionrelative:educationsysproject\\data\\uintofwork\\iunitofwork .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\educationsysproject\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|solutionrelative:educationsysproject\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|d:\\iti-9-month\\c#\\labs\\ef\\educationsysproject\\educationsysproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|solutionrelative:educationsysproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|d:\\iti-9-month\\c#\\labs\\ef\\educationsysproject\\educationsysproject\\data\\models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|solutionrelative:educationsysproject\\data\\models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|d:\\iti-9-month\\c#\\labs\\ef\\educationsysproject\\educationsysproject\\configurations\\coursestudentconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|solutionrelative:educationsysproject\\configurations\\coursestudentconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|d:\\iti-9-month\\c#\\labs\\ef\\educationsysproject\\educationsysproject\\configurations\\instructorconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D9B20FC-538F-422D-B6A8-0D0949DE302D}|EducationSysProject\\EducationSysProject.csproj|solutionrelative:educationsysproject\\configurations\\instructorconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,11 +42,87 @@
       "DocumentGroups": [
         {
           "DockedWidth": 229,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainForm.Designer.cs",
+              "DocumentMoniker": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\MainForm.Designer.cs",
+              "RelativeDocumentMoniker": "EducationSysProject\\MainForm.Designer.cs",
+              "ToolTip": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\MainForm.Designer.cs",
+              "RelativeToolTip": "EducationSysProject\\MainForm.Designer.cs",
+              "ViewState": "AgIAALQAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T11:11:03.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GenericCrudService.cs",
+              "DocumentMoniker": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\Services\\GenericCrudService.cs",
+              "RelativeDocumentMoniker": "EducationSysProject\\Services\\GenericCrudService.cs",
+              "ToolTip": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\Services\\GenericCrudService.cs",
+              "RelativeToolTip": "EducationSysProject\\Services\\GenericCrudService.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T11:10:43.511Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "DynamicFormService.cs",
+              "DocumentMoniker": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\Services\\DynamicFormService.cs",
+              "RelativeDocumentMoniker": "EducationSysProject\\Services\\DynamicFormService.cs",
+              "ToolTip": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\Services\\DynamicFormService.cs*",
+              "RelativeToolTip": "EducationSysProject\\Services\\DynamicFormService.cs*",
+              "ViewState": "AgIAAEIAAAAAAAAAAADwv7EAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T10:58:18.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ServiceProvider.cs",
+              "DocumentMoniker": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\Services\\ServiceProvider.cs",
+              "RelativeDocumentMoniker": "EducationSysProject\\Services\\ServiceProvider.cs",
+              "ToolTip": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\Services\\ServiceProvider.cs",
+              "RelativeToolTip": "EducationSysProject\\Services\\ServiceProvider.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T10:42:45.005Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EducationSysContext.cs",
+              "DocumentMoniker": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\Context\\EducationSysContext.cs",
+              "RelativeDocumentMoniker": "EducationSysProject\\Context\\EducationSysContext.cs",
+              "ToolTip": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\Context\\EducationSysContext.cs",
+              "RelativeToolTip": "EducationSysProject\\Context\\EducationSysContext.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAADwv94AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T18:37:02.779Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\MainForm.cs",
+              "RelativeDocumentMoniker": "EducationSysProject\\MainForm.cs",
+              "ToolTip": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\MainForm.cs",
+              "RelativeToolTip": "EducationSysProject\\MainForm.cs",
+              "ViewState": "AgIAALEBAAAAAAAAAAAcwNUBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T02:09:14.57Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "CourseStudentRepository.cs",
               "DocumentMoniker": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\Data\\Repositories\\CourseStudentRepository\\CourseStudentRepository.cs",
               "RelativeDocumentMoniker": "EducationSysProject\\Data\\Repositories\\CourseStudentRepository\\CourseStudentRepository.cs",
@@ -78,122 +130,11 @@
               "RelativeToolTip": "EducationSysProject\\Data\\Repositories\\CourseStudentRepository\\CourseStudentRepository.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T18:46:20.974Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EducationSysContext.cs",
-              "DocumentMoniker": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\Context\\EducationSysContext.cs",
-              "RelativeDocumentMoniker": "EducationSysProject\\Context\\EducationSysContext.cs",
-              "ToolTip": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\Context\\EducationSysContext.cs",
-              "RelativeToolTip": "EducationSysProject\\Context\\EducationSysContext.cs",
-              "ViewState": "AgIAAH4AAAAAAAAAAAAgwN4AAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T18:37:02.779Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MainForm.cs",
-              "DocumentMoniker": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\MainForm.cs",
-              "RelativeDocumentMoniker": "EducationSysProject\\MainForm.cs",
-              "ToolTip": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\MainForm.cs",
-              "RelativeToolTip": "EducationSysProject\\MainForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T02:09:14.57Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BaseRepository.cs",
-              "DocumentMoniker": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\Data\\Repositories\\BaseRepository.cs",
-              "RelativeDocumentMoniker": "EducationSysProject\\Data\\Repositories\\BaseRepository.cs",
-              "ToolTip": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\Data\\Repositories\\BaseRepository.cs",
-              "RelativeToolTip": "EducationSysProject\\Data\\Repositories\\BaseRepository.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAUwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T01:20:47.305Z"
+              "WhenOpened": "2025-04-10T18:46:20.974Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "UnitOfWork.cs",
-              "DocumentMoniker": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\Data\\UintOfWork\\UnitOfWork.cs",
-              "RelativeDocumentMoniker": "EducationSysProject\\Data\\UintOfWork\\UnitOfWork.cs",
-              "ToolTip": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\Data\\UintOfWork\\UnitOfWork.cs",
-              "RelativeToolTip": "EducationSysProject\\Data\\UintOfWork\\UnitOfWork.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAA9wAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T01:20:38.496Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "IUnitOfWork .cs",
-              "DocumentMoniker": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\Data\\UintOfWork\\IUnitOfWork .cs",
-              "RelativeDocumentMoniker": "EducationSysProject\\Data\\UintOfWork\\IUnitOfWork .cs",
-              "ToolTip": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\Data\\UintOfWork\\IUnitOfWork .cs",
-              "RelativeToolTip": "EducationSysProject\\Data\\UintOfWork\\IUnitOfWork .cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T01:20:37.279Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DynamicFormService.cs",
-              "DocumentMoniker": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\Services\\DynamicFormService.cs",
-              "RelativeDocumentMoniker": "EducationSysProject\\Services\\DynamicFormService.cs",
-              "ToolTip": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\Services\\DynamicFormService.cs",
-              "RelativeToolTip": "EducationSysProject\\Services\\DynamicFormService.cs",
-              "ViewState": "AgIAAN0AAAAAAAAAAAAswOsAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T23:48:37.808Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IRepository.cs",
-              "DocumentMoniker": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\Data\\Repositories\\IRepository.cs",
-              "RelativeDocumentMoniker": "EducationSysProject\\Data\\Repositories\\IRepository.cs",
-              "ToolTip": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\Data\\Repositories\\IRepository.cs",
-              "RelativeToolTip": "EducationSysProject\\Data\\Repositories\\IRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T01:20:50.772Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MainForm.Designer.cs",
-              "DocumentMoniker": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\MainForm.Designer.cs",
-              "RelativeDocumentMoniker": "EducationSysProject\\MainForm.Designer.cs",
-              "ToolTip": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\MainForm.Designer.cs",
-              "RelativeToolTip": "EducationSysProject\\MainForm.Designer.cs",
-              "ViewState": "AgIAAJ4AAAAAAAAAAAAswLoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T04:19:56.282Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "MainForm.cs [Design]",
-              "DocumentMoniker": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\MainForm.cs",
-              "RelativeDocumentMoniker": "EducationSysProject\\MainForm.cs",
-              "ToolTip": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\MainForm.cs [Design]",
-              "RelativeToolTip": "EducationSysProject\\MainForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T02:08:45.636Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\Program.cs",
               "RelativeDocumentMoniker": "EducationSysProject\\Program.cs",
@@ -202,42 +143,6 @@
               "ViewState": "AgIAABMAAAAAAAAAAAAUwC8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-03T23:29:34.447Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Department.cs",
-              "DocumentMoniker": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\Data\\Models\\Department.cs",
-              "RelativeDocumentMoniker": "EducationSysProject\\Data\\Models\\Department.cs",
-              "ToolTip": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\Data\\Models\\Department.cs",
-              "RelativeToolTip": "EducationSysProject\\Data\\Models\\Department.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T21:49:39.222Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "InstructorConfig.cs",
-              "DocumentMoniker": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\Configurations\\InstructorConfig.cs",
-              "RelativeDocumentMoniker": "EducationSysProject\\Configurations\\InstructorConfig.cs",
-              "ToolTip": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\Configurations\\InstructorConfig.cs",
-              "RelativeToolTip": "EducationSysProject\\Configurations\\InstructorConfig.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T21:10:45.006Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "CourseStudentConfig.cs",
-              "DocumentMoniker": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\Configurations\\CourseStudentConfig.cs",
-              "RelativeDocumentMoniker": "EducationSysProject\\Configurations\\CourseStudentConfig.cs",
-              "ToolTip": "D:\\iti-9-month\\C#\\Labs\\EF\\EducationSysProject\\EducationSysProject\\Configurations\\CourseStudentConfig.cs",
-              "RelativeToolTip": "EducationSysProject\\Configurations\\CourseStudentConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T21:10:29.714Z"
             }
           ]
         }

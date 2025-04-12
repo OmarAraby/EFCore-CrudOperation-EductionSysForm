@@ -14,63 +14,103 @@ namespace EducationSysProject.Services
         private Panel _formPanel;
         private readonly Dictionary<string, Control> _inputControls = new Dictionary<string, Control>();
         private readonly IUnitOfWork _unitOfWork;
+        private readonly Dictionary<string, List<ComboBoxItem>> _foreignKeyData;
 
         public DynamicFormService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
+            _foreignKeyData = new Dictionary<string, List<ComboBoxItem>>();
+            PreloadForeignKeyData().GetAwaiter().GetResult(); // Load data synchronously at startup
+        }
+
+        private async Task PreloadForeignKeyData()
+        {
+            var departments = await _unitOfWork.Departments.GetAllAsync();
+            _foreignKeyData["Department"] = departments.Select(dept => new ComboBoxItem
+            {
+                ID = dept.DepartmentID,
+                DisplayName = dept.Name
+            }).ToList();
+
+            var instructors = await _unitOfWork.Instructors.GetAllAsync();
+            _foreignKeyData["Instructor"] = instructors.Select(inst => new ComboBoxItem
+            {
+                ID = inst.ID,
+                DisplayName = $"{inst.FirstName} {inst.LastName}"
+            }).ToList();
+
+            var courses = await _unitOfWork.Courses.GetAllAsync();
+            _foreignKeyData["Course"] = courses.Select(course => new ComboBoxItem
+            {
+                ID = course.ID,
+                DisplayName = course.Name
+            }).ToList();
+
+            var students = await _unitOfWork.Students.GetAllAsync();
+            _foreignKeyData["Student"] = students.Select(student => new ComboBoxItem
+            {
+                ID = student.ID,
+                DisplayName = $"{student.FirstName} {student.LastName}"
+            }).ToList();
+
+            var sessions = await _unitOfWork.CourseSessions.GetAllAsync();
+            _foreignKeyData["CourseSession"] = sessions.Select(session => new ComboBoxItem
+            {
+                ID = session.ID,
+                DisplayName = $"{session.Title} ({session.Date.ToShortDateString()})"
+            }).ToList();
+
+            foreach (var key in _foreignKeyData.Keys.ToList())
+            {
+                _foreignKeyData[key].Insert(0, new ComboBoxItem { ID = Guid.Empty, DisplayName = "-- Select --" });
+            }
         }
 
         public void SetFormPanel(Panel panel)
         {
             _formPanel = panel;
-            _formPanel.Controls.Clear();
-            _inputControls.Clear();
+            if (_formPanel.InvokeRequired)
+            {
+                _formPanel.Invoke(new Action(() =>
+                {
+                    _formPanel.Controls.Clear();
+                    _inputControls.Clear();
+                }));
+            }
+            else
+            {
+                _formPanel.Controls.Clear();
+                _inputControls.Clear();
+            }
         }
 
-        public async void GenerateFormForType(Type entityType, object existingEntity = null)
+        public void GenerateFormForType(Type entityType, object existingEntity = null)
         {
             if (_formPanel == null)
                 throw new InvalidOperationException("Form panel not set. Call SetFormPanel first.");
 
+            if (_formPanel.InvokeRequired)
+            {
+                _formPanel.Invoke(new Action(() => GenerateFormForTypeInternal(entityType, existingEntity)));
+            }
+            else
+            {
+                GenerateFormForTypeInternal(entityType, existingEntity);
+            }
+        }
+
+        private void GenerateFormForTypeInternal(Type entityType, object existingEntity = null)
+        {
             _formPanel.Controls.Clear();
             _inputControls.Clear();
 
             var properties = entityType.GetProperties();
             int yPos = 20;
 
-            // Add foreign key dropdowns for specific entities
-            //if (entityType == typeof(Student))
-            //{
-            //    var label = new Label
-            //    {
-            //        Text = "DepartmentID *",
-            //        Location = new System.Drawing.Point(20, yPos),
-            //        Width = 100
-            //    };
-
-            //    var inputControl = await CreateForeignKeyDropdown(typeof(Student).GetProperty("DepartmentID") ?? throw new InvalidOperationException("DepartmentID property not found on Student"), entityType);
-            //    inputControl.Location = new System.Drawing.Point(130, yPos);
-
-            //    if (existingEntity != null)
-            //    {
-            //        SetControlValue(inputControl, typeof(Student).GetProperty("DepartmentID").GetValue(existingEntity));
-            //    }
-
-            //    _formPanel.Controls.Add(label);
-            //    _formPanel.Controls.Add(inputControl);
-            //    _inputControls.Add("DepartmentID", inputControl);
-
-            //    yPos += 30;
-            //}
-
             foreach (var prop in properties)
             {
                 if (ShouldSkipProperty(prop, entityType)) continue;
 
-                // Skip DepartmentID for Student since we already added it
-                if (entityType == typeof(Student) && prop.Name == "DepartmentID") continue;
-
-                // Determine if the property is required
                 bool isRequired = IsPropertyRequired(prop, entityType);
 
                 var label = new Label
@@ -82,10 +122,9 @@ namespace EducationSysProject.Services
 
                 Control inputControl;
 
-                // Special handling for foreign keys
                 if (prop.Name.EndsWith("ID") && prop.PropertyType == typeof(Guid) && !prop.Name.Equals("ID", StringComparison.OrdinalIgnoreCase))
                 {
-                    inputControl = await CreateForeignKeyDropdown(prop, entityType);
+                    inputControl = CreateForeignKeyDropdown(prop, entityType);
                 }
                 else
                 {
@@ -107,7 +146,7 @@ namespace EducationSysProject.Services
             }
         }
 
-        private async Task<Control> CreateForeignKeyDropdown(PropertyInfo prop, Type entityType)
+        private Control CreateForeignKeyDropdown(PropertyInfo prop, Type entityType)
         {
             var relatedEntityName = prop.Name.EndsWith("ID") ? prop.Name[..^2] : prop.Name;
 
@@ -123,70 +162,20 @@ namespace EducationSysProject.Services
                 ValueMember = "ID"
             };
 
-            try
+            if (_foreignKeyData.ContainsKey(relatedEntityName))
             {
-                var items = new List<ComboBoxItem>
-                {
-                    new ComboBoxItem { ID = Guid.Empty, DisplayName = "-- Select --" }
-                };
-
-                switch (relatedEntityName)
-                {
-                    case "Department":
-                        var departments = await _unitOfWork.Departments.GetAllAsync();
-                        foreach (var dept in departments)
-                        {
-                            items.Add(new ComboBoxItem { ID = dept.DepartmentID, DisplayName = dept.Name });
-                        }
-                        break;
-
-                    case "Instructor":
-                        var instructors = await _unitOfWork.Instructors.GetAllAsync();
-                        foreach (var inst in instructors)
-                        {
-                            items.Add(new ComboBoxItem { ID = inst.ID, DisplayName = $"{inst.FirstName} {inst.LastName}" });
-                        }
-                        break;
-
-                    case "Course":
-                        var courses = await _unitOfWork.Courses.GetAllAsync();
-                        foreach (var course in courses)
-                        {
-                            items.Add(new ComboBoxItem { ID = course.ID, DisplayName = course.Name });
-                        }
-                        break;
-
-                    case "Student":
-                        var students = await _unitOfWork.Students.GetAllAsync();
-                        foreach (var student in students)
-                        {
-                            items.Add(new ComboBoxItem { ID = student.ID, DisplayName = $"{student.FirstName} {student.LastName}" });
-                        }
-                        break;
-
-                    case "CourseSession":
-                        var sessions = await _unitOfWork.CourseSessions.GetAllAsync();
-                        foreach (var session in sessions)
-                        {
-                            items.Add(new ComboBoxItem { ID = session.ID, DisplayName = $"{session.Title} ({session.Date.ToShortDateString()})" });
-                        }
-                        break;
-
-                    default:
-                        // Default empty combobox for unknown relationships
-                        break;
-                }
-
-                comboBox.DataSource = items;
+                comboBox.DataSource = _foreignKeyData[relatedEntityName].ToList();
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show($"Error loading related entities: {ex.Message}");
+                comboBox.DataSource = new List<ComboBoxItem>
+            {
+                new ComboBoxItem { ID = Guid.Empty, DisplayName = "-- Select --" }
+            };
             }
 
             return comboBox;
         }
-
         public Dictionary<string, object> GetFormValues()
         {
             var values = new Dictionary<string, object>();
