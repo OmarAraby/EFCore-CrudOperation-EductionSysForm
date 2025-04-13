@@ -4,6 +4,7 @@ using EducationSysProject.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EducationSysProject.Migrations
 {
     [DbContext(typeof(EducationSysContext))]
-    partial class EducationSysContextModelSnapshot : ModelSnapshot
+    [Migration("20250412170129_MakeDepartmentIDNullableInInstructor")]
+    partial class MakeDepartmentIDNullableInInstructor
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -28,13 +31,13 @@ namespace EducationSysProject.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("DepartmentID")
+                    b.Property<Guid>("DepartmentID")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Duration")
                         .HasColumnType("int");
 
-                    b.Property<Guid?>("InstructorID")
+                    b.Property<Guid>("InstructorID")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
@@ -90,7 +93,7 @@ namespace EducationSysProject.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid?>("InstructorID")
+                    b.Property<Guid>("InstructorID")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Title")
@@ -415,12 +418,14 @@ namespace EducationSysProject.Migrations
                     b.HasOne("EducationSysProject.Data.Models.Department", "Department")
                         .WithMany("Courses")
                         .HasForeignKey("DepartmentID")
-                        .OnDelete(DeleteBehavior.SetNull);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("EducationSysProject.Data.Models.Instructor", "Instructor")
                         .WithMany("Courses")
                         .HasForeignKey("InstructorID")
-                        .OnDelete(DeleteBehavior.SetNull);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("Department");
 
@@ -432,13 +437,14 @@ namespace EducationSysProject.Migrations
                     b.HasOne("EducationSysProject.Data.Models.Course", "Course")
                         .WithMany("CourseSessions")
                         .HasForeignKey("CourseID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("EducationSysProject.Data.Models.Instructor", "Instructor")
                         .WithMany("CourseSessions")
                         .HasForeignKey("InstructorID")
-                        .OnDelete(DeleteBehavior.SetNull);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("Course");
 

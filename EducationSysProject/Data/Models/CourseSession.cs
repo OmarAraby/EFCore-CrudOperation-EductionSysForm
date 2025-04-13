@@ -4,7 +4,7 @@
     {
         public Guid ID { get; set; }
         public Guid CourseID { get; set; }
-        public Guid InstructorID { get; set; }
+        public Guid? InstructorID { get; set; }
         public DateTime Date { get; set; }
         public string Title { get; set; }
 

@@ -3,8 +3,8 @@
    public class Course
     {
         public Guid ID { get; set; }
-        public Guid DepartmentID { get; set; }
-        public Guid InstructorID { get; set; }
+        public Guid? DepartmentID { get; set; }
+        public Guid? InstructorID { get; set; }
         public int Duration { get; set; }
         public string Name { get; set; }
 

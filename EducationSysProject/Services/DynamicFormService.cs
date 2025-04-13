@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 
+
 namespace EducationSysProject.Services
 {
     public class DynamicFormService
@@ -20,10 +21,10 @@ namespace EducationSysProject.Services
         {
             _unitOfWork = unitOfWork;
             _foreignKeyData = new Dictionary<string, List<ComboBoxItem>>();
-            PreloadForeignKeyData().GetAwaiter().GetResult(); // Load data synchronously at startup
+            LoadForeignKeyData().GetAwaiter().GetResult(); // Load data synchronously at startup
         }
 
-        private async Task PreloadForeignKeyData()
+        public async Task LoadForeignKeyData()
         {
             var departments = await _unitOfWork.Departments.GetAllAsync();
             _foreignKeyData["Department"] = departments.Select(dept => new ComboBoxItem
@@ -64,6 +65,12 @@ namespace EducationSysProject.Services
             {
                 _foreignKeyData[key].Insert(0, new ComboBoxItem { ID = Guid.Empty, DisplayName = "-- Select --" });
             }
+        }
+
+        public async Task RefreshForeignKeyData()
+        {
+            _foreignKeyData.Clear(); // نفضّي الـ Dictionary
+            await LoadForeignKeyData(); // نعيد تحميل البيانات
         }
 
         public void SetFormPanel(Panel panel)
@@ -122,7 +129,9 @@ namespace EducationSysProject.Services
 
                 Control inputControl;
 
-                if (prop.Name.EndsWith("ID") && prop.PropertyType == typeof(Guid) && !prop.Name.Equals("ID", StringComparison.OrdinalIgnoreCase))
+                if (prop.Name.EndsWith("ID") &&
+                !prop.Name.Equals("ID", StringComparison.OrdinalIgnoreCase) &&
+                (prop.PropertyType == typeof(Guid) || prop.PropertyType == typeof(Guid?)))
                 {
                     inputControl = CreateForeignKeyDropdown(prop, entityType);
                 }
@@ -146,7 +155,7 @@ namespace EducationSysProject.Services
             }
         }
 
-        private Control CreateForeignKeyDropdown(PropertyInfo prop, Type entityType)
+        private ComboBox CreateForeignKeyDropdown(PropertyInfo prop, Type entityType)
         {
             var relatedEntityName = prop.Name.EndsWith("ID") ? prop.Name[..^2] : prop.Name;
 
@@ -358,11 +367,11 @@ namespace EducationSysProject.Services
 
                 case ComboBox comboBox:
                     if (value is Guid guid)
-                    {
+                        {
                         var items = comboBox.Items.Cast<ComboBoxItem>();
                         var matchingItem = items.FirstOrDefault(i => i.ID.Equals(guid));
                         if (matchingItem != null)
-                        {
+                            {
                             comboBox.SelectedItem = matchingItem;
                         }
                     }

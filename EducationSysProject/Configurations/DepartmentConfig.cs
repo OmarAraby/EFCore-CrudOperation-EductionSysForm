@@ -28,7 +28,7 @@ namespace EducationSysProject.Configurations
             builder.HasMany(d => d.Courses)
                 .WithOne(c => c.Department)
                 .HasForeignKey(c => c.DepartmentID)  // fk in Course
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasMany(d => d.Instructors)
                 .WithOne(i => i.Department)

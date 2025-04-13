@@ -1,4 +1,5 @@
-﻿using EducationSysProject.Data.Repositories;
+﻿using EducationSysProject.Data.Models;
+using EducationSysProject.Data.Repositories;
 using EducationSysProject.Data.UintOfWork;
 using System;
 using System.Threading.Tasks;
@@ -8,10 +9,21 @@ namespace EducationSysProject.Services
     public class GenericCrudService : IGenericCrudService
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly Dictionary<Type, object> _repositories;
 
         public GenericCrudService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
+            _repositories = new Dictionary<Type, object>
+        {
+            { typeof(Student), _unitOfWork.Students },
+            { typeof(Department), _unitOfWork.Departments },
+            { typeof(Instructor), _unitOfWork.Instructors },
+            { typeof(Course), _unitOfWork.Courses },
+            { typeof(CourseSession), _unitOfWork.CourseSessions },
+            { typeof(CourseStudent), _unitOfWork.CourseStudents },
+            { typeof(CourseSessionAttendance), _unitOfWork.CourseSessionAttendances }
+        };
         }
 
         public async Task<T?> GetByIdAsync<T>(Guid id) where T : class
@@ -49,11 +61,11 @@ namespace EducationSysProject.Services
 
         private IRepository<T> GetRepositoryForType<T>() where T : class
         {
-            var repositoryProperty = _unitOfWork.GetType().GetProperty($"{typeof(T).Name}s");
-            if (repositoryProperty == null)
-                throw new InvalidOperationException($"No repository found for type {typeof(T).Name}");
-
-            return (IRepository<T>)repositoryProperty.GetValue(_unitOfWork);
+            if (_repositories.TryGetValue(typeof(T), out var repository))
+            {
+                return (IRepository<T>)repository;
+            }
+            throw new InvalidOperationException($"No repository found for type {typeof(T).Name}");
         }
     }
 }

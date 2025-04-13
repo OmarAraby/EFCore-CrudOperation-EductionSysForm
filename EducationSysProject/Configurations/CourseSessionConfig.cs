@@ -27,12 +27,12 @@ namespace EducationSysProject.Configurations
             builder.HasOne(cs => cs.Course)
                 .WithMany(c => c.CourseSessions)
                 .HasForeignKey(cs => cs.CourseID) // fk in CourseSession
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasOne(cs => cs.Instructor)
                 .WithMany(i => i.CourseSessions)
                 .HasForeignKey(cs => cs.InstructorID) // fk in CourseSession
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasMany(cs => cs.Attendances)
                 .WithOne(ca => ca.CourseSession)

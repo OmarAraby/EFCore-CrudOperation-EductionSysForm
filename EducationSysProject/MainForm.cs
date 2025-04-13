@@ -44,7 +44,7 @@ namespace EducationSysProject
             InitializeForm();
         }
 
-     
+
         private void InitializeTabs()
         {
             // Add the "Home" tab first
@@ -125,50 +125,6 @@ namespace EducationSysProject
             }
         }
 
-        //private void InitializeForm()
-        //{
-        //    btnSave.Click += BtnSave_Click;
-        //    btnDelete.Click += BtnDelete_Click;
-        //    btnCancel.Click += BtnCancel_Click;
-
-        //    tabControl.SelectedIndexChanged += async (s, e) =>
-        //    {
-        //        // Skip if the "Home" tab is selected
-        //        if (tabControl.SelectedTab.Text == "Home")
-        //        {
-        //            formPanel.Controls.Clear(); // Clear the form panel
-        //            formPanel.Visible = false; // Hide the form panel
-        //            btnSave.Visible = false; // Hide the Save button
-        //            btnDelete.Visible = false; // Hide the Delete button
-        //            btnCancel.Visible = false; // Hide the Cancel button
-        //            return;
-        //        }
-
-        //        if (tabControl.SelectedTab != null && tabControl.SelectedTab.Tag is Type entityType)
-        //        {
-        //            _currentEntityType = entityType;
-        //            _currentGrid = (DataGridView)tabControl.SelectedTab.Controls[0];
-        //            _formService.SetFormPanel(formPanel);
-        //            await LoadEntities();
-        //            ResetFormState();
-        //            formPanel.Visible = true; 
-        //            btnSave.Visible = true;
-        //            btnDelete.Visible = true; 
-        //            btnCancel.Visible = true; 
-        //            btnSave.Enabled = true; 
-        //        }
-        //    };
-
-        //    if (tabControl.TabPages.Count > 0)
-        //    {
-        //        tabControl.SelectedIndex = 0; // Set "Home" tab as default
-        //                                      // Since "Home" tab is selected by default, hide the elements initially
-        //        formPanel.Visible = false;
-        //        btnSave.Visible = false;
-        //        btnDelete.Visible = false;
-        //        btnCancel.Visible = false;
-        //    }
-        //}
 
         private void InitializeForm()
         {
@@ -266,112 +222,6 @@ namespace EducationSysProject
             btnDelete.Enabled = true;
         }
 
-        //private async Task LoadEntities()
-        //{
-        //    if (_currentEntityType == null) return;
-
-        //    try
-        //    {
-        //        // Use reflection to dynamically invoke GetAllAsync with the current entity type
-        //        var getAllMethod = typeof(IGenericCrudService).GetMethod("GetAllAsync");
-        //        var genericGetAllMethod = getAllMethod.MakeGenericMethod(_currentEntityType);
-
-        //        // Invoke the generic method, which returns Task<IEnumerable<T>>
-        //        var task = (Task)genericGetAllMethod.Invoke(_crudService, null);
-
-        //        // Await the task dynamically to get IEnumerable<T>
-        //        await task.ConfigureAwait(false);
-
-        //        // Use reflection to get the result (IEnumerable<T>) from the Task
-        //        var resultProperty = task.GetType().GetProperty("Result");
-        //        var entities = (IEnumerable)resultProperty.GetValue(task);
-
-        //        // Cast the entities to IEnumerable<object>
-        //        var objectEntities = entities.Cast<object>().ToList();
-
-        //        var bindingSource = new BindingSource();
-        //        bindingSource.DataSource = objectEntities;
-        //        _currentGrid.DataSource = bindingSource;
-
-        //        // Hide navigation properties
-        //        foreach (DataGridViewColumn column in _currentGrid.Columns)
-        //        {
-        //            PropertyInfo prop = _currentEntityType.GetProperty(column.Name);
-        //            if (prop != null &&
-        //                ((prop.PropertyType.IsClass && prop.PropertyType != typeof(string)) ||
-        //                 prop.PropertyType.IsInterface))
-        //            {
-        //                column.Visible = false;
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show($"Error loading data: {ex.Message}");
-        //    }
-        //}
-
-
-        //private async Task LoadEntities()
-        //{
-        //    if (_currentEntityType == null) return;
-
-        //    try
-        //    {
-        //        // Use reflection to dynamically invoke GetAllAsync with the current entity type
-        //        var getAllMethod = typeof(IGenericCrudService).GetMethod("GetAllAsync");
-        //        var genericGetAllMethod = getAllMethod.MakeGenericMethod(_currentEntityType);
-
-        //        // Invoke the generic method, which returns Task<IEnumerable<T>>
-        //        var task = (Task)genericGetAllMethod.Invoke(_crudService, null);
-
-        //        // Await the task dynamically to get IEnumerable<T>
-        //        await task.ConfigureAwait(false);
-
-        //        // Use reflection to get the result (IEnumerable<T>) from the Task
-        //        var resultProperty = task.GetType().GetProperty("Result");
-        //        var entities = (IEnumerable)resultProperty.GetValue(task);
-
-        //        // Log the number of entities retrieved
-        //        var entityCount = entities?.Cast<object>().Count() ?? 0;
-        //        System.Diagnostics.Debug.WriteLine($"Loaded {entityCount} entities of type {_currentEntityType.Name}");
-
-        //        // Cast the entities to IEnumerable<object>
-        //        var objectEntities = entities?.Cast<object>().ToList();
-
-        //        // Check if the data is null or empty
-        //        if (objectEntities == null || !objectEntities.Any())
-        //        {
-        //            _currentGrid.DataSource = null; // Clear the DataGridView if no data
-        //            MessageBox.Show($"No {_currentEntityType.Name} data found.");
-        //            return;
-        //        }
-
-        //        var bindingSource = new BindingSource();
-        //        bindingSource.DataSource = objectEntities;
-        //        _currentGrid.DataSource = bindingSource;
-
-        //        // Hide navigation properties
-        //        foreach (DataGridViewColumn column in _currentGrid.Columns)
-        //        {
-        //            PropertyInfo prop = _currentEntityType.GetProperty(column.Name);
-        //            if (prop != null &&
-        //                ((prop.PropertyType.IsClass && prop.PropertyType != typeof(string)) ||
-        //                 prop.PropertyType.IsInterface))
-        //            {
-        //                column.Visible = false;
-        //            }
-        //            else if (prop == null)
-        //            {
-        //                column.Visible = false;
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show($"Error loading data: {ex.Message}\nInner Exception: {(ex.InnerException != null ? ex.InnerException.Message : "None")}");
-        //    }
-        //}
 
         private async Task LoadEntities()
         {
@@ -492,16 +342,100 @@ namespace EducationSysProject
                     }
                 }
 
-                foreach (var prop in _currentEntityType.GetProperties())
+            foreach (var prop in _currentEntityType.GetProperties())
+            {
+                if (formValues.TryGetValue(prop.Name, out var value) && value != null)
                 {
-                    if (formValues.TryGetValue(prop.Name, out var value) && value != null)
+                    try
                     {
-                        var convertedValue = Convert.ChangeType(value, prop.PropertyType);
+                        // التعامل مع الأنواع المختلفة
+                        object convertedValue = null;
+
+                        // لو البروبرتي من نوع Guid أو Guid?
+                        if (prop.PropertyType == typeof(Guid) || prop.PropertyType == typeof(Guid?))
+                        {
+                            if (value is Guid guidValue)
+                            {
+                                convertedValue = guidValue;
+                            }
+                            else if (value is string strValue && Guid.TryParse(strValue, out var parsedGuid))
+                            {
+                                convertedValue = parsedGuid;
+                            }
+                            else
+                            {
+                                throw new FormatException($"Cannot convert value '{value}' to Guid for property '{prop.Name}'.");
+                            }
+                        }
+                        // لو البروبرتي من نوع DateTime أو DateTime?
+                        else if (prop.PropertyType == typeof(DateTime) || prop.PropertyType == typeof(DateTime?))
+                        {
+                            if (value is DateTime dateTimeValue)
+                            {
+                                convertedValue = dateTimeValue;
+                            }
+                            else if (value is string strValue && DateTime.TryParse(strValue, out var parsedDateTime))
+                            {
+                                convertedValue = parsedDateTime;
+                            }
+                            else
+                            {
+                                throw new FormatException($"Cannot convert value '{value}' to DateTime for property '{prop.Name}'.");
+                            }
+                        }
+                     
+                        else if (prop.PropertyType == typeof(bool))
+                        {
+                            if (value is bool boolValue)
+                            {
+                                convertedValue = boolValue;
+                            }
+                            else if (value is string strValue && bool.TryParse(strValue, out var parsedBool))
+                            {
+                                convertedValue = parsedBool;
+                            }
+                            else
+                            {
+                                throw new FormatException($"Cannot convert value '{value}' to bool for property '{prop.Name}'.");
+                            }
+                        }
+                       
+                        else if (prop.PropertyType == typeof(int) || prop.PropertyType == typeof(int?))
+                        {
+                            if (value is int intValue)
+                            {
+                                convertedValue = intValue;
+                            }
+                            else if (value is string strValue && int.TryParse(strValue, out var parsedInt))
+                            {
+                                convertedValue = parsedInt;
+                            }
+                            else
+                            {
+                                throw new FormatException($"Cannot convert value '{value}' to int for property '{prop.Name}'.");
+                            }
+                        }
+                     
+                        else if (prop.PropertyType == typeof(string))
+                        {
+                            convertedValue = value.ToString();
+                        }
+                        else
+                        {
+                            convertedValue = Convert.ChangeType(value, prop.PropertyType);
+                        }
+
+                      
                         prop.SetValue(entity, convertedValue);
                     }
+                    catch (Exception ex)
+                    {
+                        throw new InvalidOperationException($"Error setting property '{prop.Name}' on entity type '{_currentEntityType.Name}': {ex.Message}", ex);
+                    }
                 }
+            }
 
-                if (_currentEntity == null)
+            if (_currentEntity == null)
                 {
                     await _crudService.CreateAsync((dynamic)entity);
                     MessageBox.Show("Created successfully!");
@@ -511,10 +445,10 @@ namespace EducationSysProject
                     await _crudService.UpdateAsync((dynamic)entity);
                     MessageBox.Show("Updated successfully!");
                 }
-
+                await _formService.RefreshForeignKeyData(); 
                 await LoadEntities();
                 ResetFormState();
-            }
+        }
             catch (Exception ex)
             {
                 string errorMessage = $"Error: {ex.Message}";
@@ -522,7 +456,7 @@ namespace EducationSysProject
                 {
                     errorMessage += $"\nInner Exception: {ex.InnerException.Message}";
                 }
-                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -536,6 +470,7 @@ namespace EducationSysProject
                 try
                 {
                     await _crudService.DeleteAsync((dynamic)_currentEntity);
+                    await _formService.RefreshForeignKeyData(); // تحديث الـ Foreign Key Data
                     await LoadEntities();
                     MessageBox.Show("Deleted successfully!");
                     ResetFormState();
@@ -558,7 +493,7 @@ namespace EducationSysProject
             _formService.GenerateFormForType(_currentEntityType);
             btnSave.Text = "Save";
             btnDelete.Enabled = false;
-            btnSave.Visible = true; 
+            btnSave.Visible = true;
             btnDelete.Visible = true;
             btnCancel.Visible = true;
             formPanel.Visible = true;
